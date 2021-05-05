@@ -12,7 +12,7 @@ node {
         sh 'ls'
     }
     stage('Build'){
-        withMaven(maven: 'Maven 3.6.3', jdk: 'JDK 11') {
+        withMaven(maven: 'Maven 3.6.3', jdk: 'JDK 11', mavenLocalRepo: 'MyGlobalSettings') {
             sh 'mvn clean install'
         }
     }
