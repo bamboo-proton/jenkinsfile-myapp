@@ -13,7 +13,7 @@ node {
     }
     stage('Build'){
         withMaven(maven: 'Maven 3.6.3', jdk: 'JDK 11') {
-            sh 'mvn -v'
+            sh 'mvn clean install'
         }
     }
     stage('Notify'){
